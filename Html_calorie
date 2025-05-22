@@ -1,0 +1,41 @@
+<form id="calorie-counter">
+  <h2>Daily Calorie Tracker</h2>
+  
+  <div class="form-group">
+    <label for="budget">Daily Calorie Budget (kcal)</label>
+    <input type="number" id="budget" name="budget" required>
+  </div>
+  
+  <div class="meal-group">
+    <h3>Meal Calories</h3>
+    
+    <div class="form-group">
+      <label for="breakfast">Breakfast (kcal)</label>
+      <input type="number" id="breakfast" name="breakfast">
+    </div>
+    
+    <div class="form-group">
+      <label for="lunch">Lunch (kcal)</label>
+      <input type="number" id="lunch" name="lunch">
+    </div>
+    
+    <div class="form-group">
+      <label for="dinner">Dinner (kcal)</label>
+      <input type="number" id="dinner" name="dinner">
+    </div>
+    
+    <div class="form-group">
+      <label for="snacks">Snacks (kcal)</label>
+      <input type="number" id="snacks" name="snacks">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="exercise">Exercise Calories Burned (kcal)</label>
+    <input type="number" id="exercise" name="exercise">
+  </div>
+  
+  <button type="submit">Calculate Balance</button>
+  
+  <div id="result" class="result"></div>
+</form>
