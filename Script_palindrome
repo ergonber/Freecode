@@ -1,0 +1,38 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const checkButton = document.getElementById('checkButton');
+    const inputText = document.getElementById('inputText');
+    const resultDiv = document.getElementById('result');
+    
+    // Add event listener to the button
+    checkButton.addEventListener('click', checkPalindrome);
+    
+    // Function to check if text is a palindrome
+    function checkPalindrome() {
+        // Clean the string: remove non-alphanumeric chars and convert to lowercase
+        const cleanedStr = inputText.value.replace(/[^a-z0-9]/gi, '').toLowerCase();
+        
+        // Check if empty
+        if (cleanedStr.length === 0) {
+            showResult("Please enter some text to check", false);
+            return;
+        }
+        
+        // Check if palindrome
+        const isPal = cleanedStr === cleanedStr.split('').reverse().join('');
+        
+        // Display result
+        const message = isPal 
+            ? `"${inputText.value}" IS a palindrome!` 
+            : `"${inputText.value}" is NOT a palindrome.`;
+        
+        showResult(message, isPal);
+    }
+    
+    // Function to display the result
+    function showResult(message, isPalindrome) {
+        resultDiv.textContent = message;
+        resultDiv.className = isPalindrome ? "palindrome" : "not-palindrome";
+        resultDiv.style.display = "block";
+    }
+});
