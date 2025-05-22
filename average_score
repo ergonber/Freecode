@@ -1,0 +1,13 @@
+function getAverage(scores) {
+  // Step 1: Sum all the scores
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++) {
+    sum += scores[i];
+  }
+  
+  // Step 2: Divide the sum by the number of scores
+  const average = sum / scores.length;
+  
+  // Step 3: Return the calculated average
+  return average;
+}
