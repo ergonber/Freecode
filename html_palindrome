@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Palindrome Checker</h1>
+        <p>Enter text to check if it's a palindrome (reads the same forwards and backwards, ignoring punctuation and spaces):</p>
+        
+        <textarea id="inputText" placeholder="e.g., A man, a plan, a canal: Panama"></textarea>
+        
+        <button id="checkButton">Check Palindrome</button>
+        
+        <div id="result"></div>
+        
+        <div class="examples">
+            <p><strong>Example palindromes:</strong></p>
+            <ul>
+                <li>Race car</li>
+                <li>A man, a plan, a canal: Panama</li>
+                <li>No 'x' in Nixon</li>
+                <li>Was it a car or a cat I saw?</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
