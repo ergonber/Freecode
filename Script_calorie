@@ -1,0 +1,35 @@
+document.getElementById('calorie-counter').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get input values
+  const budget = parseFloat(document.getElementById('budget').value) || 0;
+  const breakfast = parseFloat(document.getElementById('breakfast').value) || 0;
+  const lunch = parseFloat(document.getElementById('lunch').value) || 0;
+  const dinner = parseFloat(document.getElementById('dinner').value) || 0;
+  const snacks = parseFloat(document.getElementById('snacks').value) || 0;
+  const exercise = parseFloat(document.getElementById('exercise').value) || 0;
+  
+  // Calculate totals
+  const consumed = breakfast + lunch + dinner + snacks;
+  const balance = budget - consumed + exercise;
+  
+  // Display results
+  const resultElement = document.getElementById('result');
+  resultElement.innerHTML = `
+    <h3>Results</h3>
+    <p><strong>Total Consumed:</strong> ${consumed} kcal</p>
+    <p><strong>Exercise:</strong> ${exercise} kcal burned</p>
+    <p><strong>Net Balance:</strong> ${balance} kcal</p>
+    <p><strong>Status:</strong> ${getStatusMessage(balance)}</p>
+  `;
+});
+
+function getStatusMessage(balance) {
+  if (balance > 0) {
+    return `You're in a <span class="deficit">calorie deficit</span> (${Math.abs(balance)} kcal under budget)`;
+  } else if (balance < 0) {
+    return `You're in a <span class="surplus">calorie surplus</span> (${Math.abs(balance)} kcal over budget)`;
+  } else {
+    return "You're exactly at your calorie budget!";
+  }
+}
